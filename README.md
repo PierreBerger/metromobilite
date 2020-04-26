@@ -5,8 +5,13 @@
 Python library for [Metromobilite API](https://www.metromobilite.fr/pages/opendata/OpenDataApi.html)
 
 Installation
+
+```sh
+pip install metromobilite
+```
+
 =====
-```bash
+```sh
 git clone git@github.com:PierreBerger/metromobilite.git
 cd metromobilite
 python setup.py install
