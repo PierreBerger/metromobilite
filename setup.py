@@ -8,4 +8,5 @@ setup(
     license="MIT",
     url="https://github.com/PierreBerger/metromobilite",
     packages=find_packages(),
+    test_suite="tests",
 )
