@@ -6,11 +6,13 @@ TIMEOUT = 10
 
 class Metromobilite:
     API_BASE_URL = 'http://data.metromobilite.fr/api/'
+    ORIGIN = 'Metromobilite Python'
 
     def make_request(self, url):
         """Make the metromobilite API request"""
 
-        response = requests.get(url, timeout=TIMEOUT)
+        headers = {'origin': self.ORIGIN}
+        response = requests.get(url, headers=headers, timeout=TIMEOUT)
 
         if response.status_code != 200:
             raise MetromobiliteRequestException(response.status_code)
