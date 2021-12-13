@@ -22,9 +22,10 @@ Usage
 ### Import and initialization:
 ```python
 from metromobilite import Metromobilite
-m = Metromobilite()
+m = Metromobilite(origin='My Origin')
 print (m.get_stoptimes('SEM:2216'))
 ```
 
 All stops and routes are vailable here : [https://data.metromobilite.fr/api/routers/default/index/routes](https://data.metromobilite.fr/api/routers/default/index/routes)
+
 See [Metromobilite API documentation](https://data.metromobilite.fr/donnees) for more informations.

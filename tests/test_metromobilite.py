@@ -7,7 +7,7 @@ from metromobilite.metromobilite_exception import MetromobiliteInvalidDataExcept
 
 class TestMetromobilite:
     def setup_class(self):
-        self.m = Metromobilite()
+        self.m = Metromobilite(origin='Test request')
 
     def test_make_request_exception(self):
         with requests_mock.Mocker() as r:
