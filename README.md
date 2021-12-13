@@ -1,8 +1,7 @@
 # Metromobilite
-[![Build Status](https://travis-ci.org/PierreBerger/metromobilite.svg?branch=master)](https://travis-ci.org/PierreBerger/metromobilite)
-[![Coverage Status](https://coveralls.io/repos/github/PierreBerger/metromobilite/badge.svg?branch=master)](https://coveralls.io/github/PierreBerger/metromobilite?branch=master)
+[![PyPI Version](https://img.shields.io/pypi/v/metromobilite.svg)](https://pypi.org/project/metromobilite/)
 
-Python library for [Metromobilite API](https://www.metromobilite.fr/pages/opendata/OpenDataApi.html) (Transport for Grenoble, TAG).
+A Python client for interacting with [Metromobilite API](https://www.metromobilite.fr/pages/opendata/OpenDataApi.html) (Transport for Grenoble, TAG).
 
 Installation
 =====
@@ -24,4 +23,8 @@ Usage
 ```python
 from metromobilite import Metromobilite
 m = Metromobilite()
+print (m.get_stoptimes('SEM:2216'))
 ```
+
+All stops and routes are vailable here : [https://data.metromobilite.fr/api/routers/default/index/routes](https://data.metromobilite.fr/api/routers/default/index/routes)
+See [Metromobilite API documentation](https://data.metromobilite.fr/donnees) for more informations.
