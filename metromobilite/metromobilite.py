@@ -11,11 +11,11 @@ class Metromobilite:
         self.origin = origin
 
 
-    def make_request(self, url):
+    def make_request(self, url, params=None):
         """Make the metromobilite API request"""
 
         headers = {'origin': self.origin}
-        response = requests.get(url, headers=headers, timeout=TIMEOUT)
+        response = requests.get(url, headers=headers, timeout=TIMEOUT, params=params)
 
         if response.status_code != 200:
             raise MetromobiliteRequestException(response.status_code)
@@ -32,3 +32,8 @@ class Metromobilite:
         url = self.API_BASE_URL + 'routers/default/index/stops/' + stop_id + '/stoptimes'
 
         return self.make_request(url)
+
+    def get_lines_near(self, latitude, longitude, dist, details):
+        url = self.API_BASE_URL + 'api/linesNear/json'
+        params = {'latitude': latitude, 'longitude': longitude, 'dist': dist, 'details': details}
+        return self.make_request(url, params)
