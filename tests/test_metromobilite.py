@@ -34,7 +34,7 @@ class TestMetromobilite:
 
     def test_get_lines_near(self):
         with requests_mock.Mocker() as r:
-            r.get(self.m.API_BASE_URL + 'api/linesNear/json', json="""{"test": "test"}""")
-            response = self.m.get_lines_near(latitude='test', longitude='test', dist='test', details='test')
+            r.get(self.m.API_BASE_URL + 'linesNear/json', json="""{"test": "test"}""")
+            response = self.m.get_lines_near(x='test', y='test', dist='test', details='test')
             assert """{"test": "test"}""" == response
 

@@ -33,7 +33,7 @@ class Metromobilite:
 
         return self.make_request(url)
 
-    def get_lines_near(self, latitude, longitude, dist, details):
-        url = self.API_BASE_URL + 'api/linesNear/json'
-        params = {'latitude': latitude, 'longitude': longitude, 'dist': dist, 'details': details}
+    def get_lines_near(self, x, y, dist=None, details=None):
+        url = self.API_BASE_URL + 'linesNear/json'
+        params = {'x': x, 'y': y, 'dist': dist, 'details': details}
         return self.make_request(url, params)
